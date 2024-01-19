@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>300</width>
+      <height>300</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelEndLatLon">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>110</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>End Lat,Lon coordinates</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelStartLatLon">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start Lat,Lon coordinates</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEditStartLatLon">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>30</y>
+      <width>131</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Lat#,Lon#\n...repeat</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEditEndLatLon">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>130</y>
+      <width>131</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Lat#,Lon#\n...repeat</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuExport">
+    <property name="title">
+     <string>Export</string>
+    </property>
+    <addaction name="actionExportCSV"/>
+    <addaction name="actionExportPyomo"/>
+   </widget>
+   <widget class="QMenu" name="menuImport">
+    <property name="title">
+     <string>Import</string>
+    </property>
+    <addaction name="actionImportCSV"/>
+    <addaction name="actionImportPyomo"/>
+   </widget>
+   <addaction name="menuExport"/>
+   <addaction name="menuImport"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExportCSV">
+   <property name="text">
+    <string>CSV file</string>
+   </property>
+  </action>
+  <action name="actionExportPyomo">
+   <property name="text">
+    <string>Pyomo file</string>
+   </property>
+  </action>
+  <action name="actionImportCSV">
+   <property name="text">
+    <string>CSV file</string>
+   </property>
+  </action>
+  <action name="actionImportPyomo">
+   <property name="text">
+    <string>Pyomo file</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExportCSV</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEditStartLatLon</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEditEndLatLon</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImportCSV</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
